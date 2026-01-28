@@ -1,0 +1,26 @@
+.full-screen-bg {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #7a8f8a, 
+    #b6cfc4
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  text-align: center;
+}
+
+/* 🔹 CLASE PARA TEXTO EN COMIC SANS */
+.comic-text {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+
+  /* 👇 AQUÍ MODIFICAS EL TAMAÑO DEL TEXTO */
+  font-size: 24px;
+
+  color: #1f2e2a;
+}
