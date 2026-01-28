@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './vista1.component.css'
 })
 export class Vista1Component {
-  title = 'Vista 11';
+  title = 'Vista 1';
 }
