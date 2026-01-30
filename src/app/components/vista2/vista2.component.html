@@ -1,16 +1,46 @@
-<h2 class="text-warning text-center mt-5">{{title}}</h2>
+<h2 class="text-warning text-center mt-5">{{ title }}</h2>
 <div class="container mt-5">
-   <div class="d-flex justify-content-center">
+  <div class="d-flex justify-content-center">
     <div class="w-50">
-        <div class="mb-3 d-flex align-items-center">
-            <label for="operandoA" class="form-label me-4 text-nowrap">Nombre:</label>
-            <input type="text" id="operandoA" class="form-control text-center" [(ngModel)]="nombre">
-        </div>
-        <div class="mb-3 mt-3 d-flex align-items-center">
-            <label for="operandoB" class="form-label me-4 text-nowrap">Email:</label>
-            <input type="text" id="operandoB" class="form-control text-center" [(ngModel)]="email">
-        </div>
-        <button class="btn btn-primary mt-3 w-100" (click)="enviarCorreo()">Enviar</button>
+      <div class="mb-3 d-flex align-items-center">
+        <label for="operandoA" class="form-label me-4 text-nowrap"
+          >Nombre:</label
+        >
+        <input
+          type="text"
+          id="operandoA"
+          class="form-control text-center"
+          [(ngModel)]="nombre"
+          (input)="validarNombre()"
+          [class.is-invalid]="nombreInvalido">
+        
+      </div>
+      <div *ngIf="nombreInvalido" class="text-danger mb-2 text-center">
+        El nombre debe tener al menos 3 caracteres
+      </div>
+      <div class="mb-3 mt-3 d-flex align-items-center">
+        <label for="operandoB" class="form-label me-4 text-nowrap"
+          >Email:</label
+        >
+        <input
+          type="text"
+          id="operandoB"
+          class="form-control text-center"
+          [(ngModel)]="email"
+          (input)="validarEmail()"
+          [class.is-invalid]="emailInvalido">
+        
+      </div>
+      <div *ngIf="emailInvalido" class="text-danger mb-2 text-center">
+        Ingresa un email válido
+      </div>
+      <button
+        class="btn btn-primary mt-3 w-100"
+        (click)="enviarCorreo()"
+        [disabled]="!formularioValido"
+      >
+        Enviar
+      </button>
     </div>
-   </div> 
+  </div>
 </div>
